@@ -125,19 +125,13 @@ open Examples/Examples.xcodeproj
 |SRTHaishinKit|13.0+|13.0+|10.15+|1.0+|-|
 
 ### Cocoa Keys
-Please contains Info.plist.
-
-**iOS 10.0+**
-* NSMicrophoneUsageDescription
-* NSCameraUsageDescription
-
-**macOS 10.14+**
-* NSMicrophoneUsageDescription
-* NSCameraUsageDescription
-
-**tvOS 17.0+**
-* NSMicrophoneUsageDescription
-* NSCameraUsageDescription
+Please make sure to contains `Info.plist` the following values when accessing the camera or microphone.
+```xml
+<key>NSCameraUsageDescription</key>
+<string>your usage description here</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>your usage description here</string>
+```
 
 ## 🔧 Installation
 * Using Swift Package Manager

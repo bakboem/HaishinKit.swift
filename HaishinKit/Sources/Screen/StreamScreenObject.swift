@@ -4,6 +4,26 @@ import CoreImage
 import Foundation
 
 /// An object that manages offscreen rendering a streaming video track source.
+///
+/// ## Usage
+/// var streamScreenObject = StreamScreenObject()
+///
+/// ```
+/// Task {
+///   // Register to the Stream's Output observer.
+///   rtmpStream.addOutput(streamScreenObject)
+///   rtmpStream.play("yourStreamName")
+/// }
+/// ```
+///
+/// ```
+/// Task { @ScreenActor in
+///  streamScreenObject.layoutMargin = .init(top: 16, left: 0, bottom: 0, right: 16)
+///  streamScreenObject.size = .init(width: 160 * 2, height: 90 * 2)
+///
+///  try? await mixer.screen.addChild(streamScreenObject)
+/// }
+/// ```
 public final class StreamScreenObject: ScreenObject, ChromaKeyProcessable {
     public var chromaKeyColor: CGColor?
 
